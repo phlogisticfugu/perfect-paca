@@ -21,5 +21,6 @@ module.exports = {
       'message': 'Author'
     },
   },
+  skipInterpolation: "**/*.vue",
   completeMessage: '{{#inPlace}}see https://github.com/phlogisticfugu/perfect-paca to get started{{/inPlace}}'
 };

@@ -10,10 +10,11 @@ function axios_factory (context, options) {
     let protocol = context.isDev ? 'http' : 'https'
     baseURL = `${protocol}://${context.req.headers.host}/`
   }
-
-  return axios.create(Object.assign({
+  options = Object.assign({
     baseURL
-  }, options))
+  }, options)
+
+  return axios.create(options)
 }
 
 export default axios_factory
