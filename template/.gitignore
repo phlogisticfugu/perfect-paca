@@ -1,0 +1,15 @@
+# file meta data
+.DS_Store
+
+# Node.js
+node_modules
+jspm_packages
+npm-debug.log*
+.npm
+.node_repl_history
+
+# Nuxt.js build
+.nuxt
+
+# Serverless directories
+.serverless

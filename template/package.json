@@ -1,0 +1,31 @@
+{
+  "name": "{{ name }}",
+  "version": "0.0.1",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "dev": "node serve-local.js",
+    "deploy-dev": "nuxt build && serverless deploy --stage dev",
+    "deploy-dev-fast": "nuxt build && serverless deploy --stage dev --function main",
+    "deploy-prod": "nuxt build && serverless deploy --stage prod"
+  },
+  "dependencies": {
+    "aws-serverless-express": "^3.0.0",
+    "axios": "^0.16.1",
+    "express": "^4.15.2",
+    "nuxt": "^0.10.7"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-html": "^2.0.3",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
