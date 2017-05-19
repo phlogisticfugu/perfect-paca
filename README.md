@@ -35,7 +35,7 @@ Do local development
 npm run dev
 ```
 
-Deploy to a cloud development environment
+Deploy to a cloud-hosted development environment
 ```bash
 npm run deploy-dev
 

@@ -3,14 +3,14 @@
     <div>
       <logo/>
       <h1 class="title">
-        NUXT
+        Working Title
       </h1>
       <h2 class="subtitle">
-        Universal Vue.js Application
+        A <a href="https://github.com/phlogisticfugu/perfect-paca">perfect-paca</a>
+        universal app base on <a href="https://nuxtjs.org/">Nuxt.js</a>
       </h2>
       <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">Github</a>
+        <nuxt-link to="/hello">Hello</nuxt-link>
       </div>
     </div>
   </section>

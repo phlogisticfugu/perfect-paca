@@ -1,14 +1,14 @@
 import axios from 'axios'
 
-function axio_factory (context, options) {
-  let baseURL = '';
-  
+function axios_factory (context, options) {
+  let baseURL = ''
+
   if (context.req) {
     /*
      * local development uses http, all other environments use https
      */
-    let protocol = context.isDev ? 'http' : 'https';
-    baseURL = `${protocol}://${req.headers.host}/`;
+    let protocol = context.isDev ? 'http' : 'https'
+    baseURL = `${protocol}://${context.req.headers.host}/`
   }
 
   return axios.create(Object.assign({

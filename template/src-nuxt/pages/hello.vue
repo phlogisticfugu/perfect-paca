@@ -9,6 +9,11 @@
 import axios_factory from '~/lib/axios_factory'
 
 export default {
+  head () {
+    return {
+      title: 'Hello World'
+    };
+  },
   asyncData (context) {
     const axios = axios_factory(context)
 
