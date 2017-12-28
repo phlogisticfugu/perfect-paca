@@ -2,7 +2,7 @@ const Nuxt = require('nuxt')
 const express = require('express')
 
 const HOST = process.env.HOST || 'localhost'
-const PORT = process.env.POST || 3000
+const PORT = process.env.PORT || 3000
 const app = express()
 
 process.env.HOST = HOST
