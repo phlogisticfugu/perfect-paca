@@ -7,15 +7,18 @@
   "main": "index.js",
   "scripts": {
     "dev": "node serve-local.js",
-    "deploy-dev": "nuxt build && serverless deploy --stage dev",
-    "deploy-dev-fast": "nuxt build && serverless deploy --stage dev --function main",
-    "deploy-prod": "nuxt build && serverless deploy --stage prod"
+    "build": "cross-env AWS_EXECUTION_ENV=nodejs6.10 node -r ./src-nuxt/lib/node-8-backcompat node_modules/.bin/nuxt build",
+    "deploy-dev": "npm run build && serverless deploy --stage dev",
+    "deploy-dev-fast": "npm run build && serverless deploy --stage dev --function main",
+    "deploy-prod": "npm run build && serverless deploy --stage prod"
   },
   "dependencies": {
     "aws-serverless-express": "^3.0.0",
     "axios": "^0.16.1",
     "express": "^4.15.2",
-    "nuxt": "^0.10.7"
+    "nuxt": "^1.1.1",
+    "object.values": "^1.0.4",
+    "util.promisify": "^1.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

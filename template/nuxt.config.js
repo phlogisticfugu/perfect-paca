@@ -1,3 +1,5 @@
+const IS_LAMBDA = process.env.AWS_EXECUTION_ENV === 'nodejs6.10'
+
 module.exports = {
   head: {
     titleTemplate: '%s - Paca',
@@ -14,6 +16,14 @@ module.exports = {
   },
   srcDir: 'src-nuxt/',
   build: {
+    babel: {
+      presets: ({ isServer }) => [
+        [
+          require.resolve('babel-preset-vue-app'),
+          { targets: isServer ? { node: IS_LAMBDA ? '6.10.0' : '8.0.0' } : { ie: 9, uglify: true } }
+        ]
+      ]
+    },
     /*
     ** Run ESLINT on save
     */
