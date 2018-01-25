@@ -1,7 +1,8 @@
-if (process.env.AWS_EXECUTION_ENV === 'nodejs6.10') {
-  require('./src-nuxt/lib/node-8-backcompat')
+const IS_LAMBDA = process.env.AWS_EXECUTION_ENV === 'nodejs6.10'
+if (IS_LAMBDA) {
+  require('./util/node-8-backcompat')
 }
-const { Nuxt, Builder } = require('nuxt')
+const { Nuxt, Builder } = require(IS_LAMBDA ? './nuxt-es5' : 'nuxt')
 const express = require('express')
 
 const HOST = process.env.HOST || 'localhost'

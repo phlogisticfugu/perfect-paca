@@ -2,7 +2,7 @@ require('./src-nuxt/lib/node-8-backcompat')
 /*
  * Handler definition for https://serverless.com/
  */
-const { Nuxt } = require('nuxt')
+const { Nuxt } = require('./nuxt-es5')
 
 let nuxtConfig = require('./nuxt.config.js')
 nuxtConfig.dev = false

@@ -5,9 +5,3 @@ if (!util.promisify) {
 if (!Object.values) {
   require('object.values').shim()
 }
-require('babel-register')({
-  only: /nuxt\/lib/,
-  presets: [
-    [ 'env', { targets: { node: 'current' } } ]
-  ]
-})
