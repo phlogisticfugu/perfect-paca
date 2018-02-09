@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "node serve-local.js",
     "build-nuxt-es5": "node scripts/build-nuxt-es5",
-    "build": "npm run build-nuxt-es5 && cross-env AWS_EXECUTION_ENV=nodejs6.10 node -r ./src-nuxt/lib/node-8-backcompat -require ./src-nuxt/lib/babel-register node_modules/.bin/nuxt build",
+    "build": "npm run build-nuxt-es5 && cross-env AWS_EXECUTION_ENV=nodejs6.10 node -r ./src-nuxt/lib/node-8-backcompat -r ./src-nuxt/lib/babel-register node_modules/.bin/nuxt build",
     "deploy-dev": "npm run build && serverless deploy --stage dev",
     "deploy-dev-fast": "npm run build && serverless deploy --stage dev --function main",
     "deploy-prod": "npm run build && serverless deploy --stage prod"
