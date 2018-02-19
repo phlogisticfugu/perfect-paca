@@ -1,4 +1,8 @@
-const Nuxt = require('nuxt')
+const IS_LAMBDA = process.env.AWS_EXECUTION_ENV === 'nodejs6.10'
+if (IS_LAMBDA) {
+  require('./util/node-8-backcompat')
+}
+const { Nuxt, Builder } = require(IS_LAMBDA ? './nuxt-es5' : 'nuxt')
 const express = require('express')
 
 const HOST = process.env.HOST || 'localhost'
@@ -17,7 +21,7 @@ const nuxt = new Nuxt(nuxtConfig)
 app.use(nuxt.render)
 
 if (nuxtConfig.dev) {
-  nuxt.build()
+  new Builder(nuxt).build()
   .catch((error) => {
     console.error(error)
     process.exit(1)

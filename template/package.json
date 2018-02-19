@@ -7,18 +7,25 @@
   "main": "index.js",
   "scripts": {
     "dev": "node serve-local.js",
-    "deploy-dev": "nuxt build && serverless deploy --stage dev",
-    "deploy-dev-fast": "nuxt build && serverless deploy --stage dev --function main",
-    "deploy-prod": "nuxt build && serverless deploy --stage prod"
+    "build-nuxt-es5": "node scripts/build-nuxt-es5",
+    "build": "npm run build-nuxt-es5 && cross-env AWS_EXECUTION_ENV=nodejs6.10 node -r ./src-nuxt/lib/node-8-backcompat nuxt-es5/bin/nuxt-build",
+    "deploy-dev": "npm run build && serverless deploy --stage dev",
+    "deploy-dev-fast": "npm run build && serverless deploy --stage dev --function main",
+    "deploy-prod": "npm run build && serverless deploy --stage prod"
   },
   "dependencies": {
     "aws-serverless-express": "^3.0.0",
     "axios": "^0.16.1",
+    "babel-preset-vue-app": "^2.0.0",
     "express": "^4.15.2",
-    "nuxt": "^0.10.7"
+    "nuxt": "^1.3.0",
+    "object.values": "^1.0.4",
+    "util.promisify": "^1.0.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^7.2.3",
+    "cross-env": "^5.1.3",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-loader": "^1.7.1",
@@ -26,6 +33,8 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint-plugin-standard": "^3.0.1",
+    "serverless": "^1.25.0",
+    "shelljs": "^0.8.1"
   }
 }

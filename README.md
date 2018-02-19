@@ -35,6 +35,12 @@ Do local development
 npm run dev
 ```
 
+Do local development using node 6.10 to simulate cloud-hosted environment
+```bash
+nvm use 6.10.3
+AWS_EXECUTION_ENV=nodejs6.10 npm run dev
+```
+
 Deploy to a cloud-hosted development environment
 ```bash
 npm run deploy-dev
