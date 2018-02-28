@@ -27,7 +27,7 @@ Create a project using the template
 ```bash
 vue init phlogisticfugu/perfect-paca <project-name>
 cd <project-name>
-yarn install
+yarn --ignore-engines install
 ```
 
 Do local development
