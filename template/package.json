@@ -6,6 +6,8 @@
   "private": true,
   "main": "index.js",
   "scripts": {
+    "build": "nuxt build",
+    "serve": "nuxt build && sls offline start",
     "dev": "node serve-local.js",
     "deploy-dev": "nuxt build && serverless deploy --stage dev",
     "deploy-dev-fast": "nuxt build && serverless deploy --stage dev --function main",
@@ -15,7 +17,7 @@
     "aws-serverless-express": "^3.0.0",
     "axios": "^0.16.1",
     "express": "^4.15.2",
-    "nuxt": "^0.10.7"
+    "nuxt": "1.0.0-rc11"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
@@ -26,6 +28,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint-plugin-standard": "^3.0.1",
+    "serverless-offline": "^3.18.0"
   }
 }

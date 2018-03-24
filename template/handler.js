@@ -1,15 +1,16 @@
 /*
  * Handler definition for https://serverless.com/
  */
-const Nuxt = require('nuxt')
+const express = require('express')
+const awsServerlessExpress = require('aws-serverless-express')
+const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
+const { Nuxt } = require('nuxt')
 
 let nuxtConfig = require('./nuxt.config.js')
 nuxtConfig.dev = false
 const nuxt = new Nuxt(nuxtConfig)
 
-const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
-const awsServerlessExpress = require('aws-serverless-express')
-const app = require('express')()
+const app = express()
 const server = awsServerlessExpress.createServer(app)
 
 app.use('/api', require('./src-api'))
