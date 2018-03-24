@@ -13,3 +13,7 @@ npm-debug.log*
 
 # Serverless directories
 .serverless
+
+# Libraries block
+package-lock.json
+yarn.lock
