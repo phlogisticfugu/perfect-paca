@@ -1,4 +1,11 @@
 # perfect-paca
+
+DEPRECATED
+
+see [suf-stack-aws-koa-nuxt](https://github.com/suf-stack/generator-suf-stack-aws-koa-nuxt) [npm](https://www.npmjs.com/package/generator-suf-stack-aws-koa-nuxt)
+
+---
+
 Vue.js template/boilerplate for universal web apps with a dedicated backend.
 Running via serverless framework on AWS Lambda
 
